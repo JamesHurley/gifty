@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Frame</title>
+		<script type="text/javascript" src="/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="/frame/frame_js.js"></script>
+	</head>
+	<body onload="addText();">
+		<p style="float:right;"><a href="javascript:closeBox('close');">Close</a></p>
+		<p><strong>Gifty</strong></p>
+		{% ifequal loggedIn "True" %}
+			<p><label for="giftDescription">Gift Name:</label> <input type="text" name="_giftDescription" id="_giftDescription" /></p>
+		<form id="frameform">
+			<p><label for="giftLink">Link:</label> <input type="text" name="_giftLink" id="_giftLink" /></p>
+			<p><label for="groupId">Group:</label> <select name="_groupId" id ="_groupId" >
+			 {% for group in userGroups %}
+			   <option value={{ group.key.id }}>{{ group.groupName }}</option>
+			 {% endfor %}
+			</select></p>
+			<input type="button" value="Submit" onclick="submitForm();" />
+		{% else %}
+		  <p>You are not currently logged in to Gifty. <a href="javascript:homepage()">Log in here.</a>
+		{% endifequal %}
+		</form>
+	</body>
+</html>

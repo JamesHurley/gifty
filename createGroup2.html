@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block aboveBar %}  
+  <div id="group">
+    <p id="groupManagement" class="uppercase"><img src= "/images/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/?n={{ nickname }}">Back to main page</a></p>
+
+    {% if userGroups %}
+      <form id="groupForm">      
+      <img src= "/images/gifty_bug_bow-red.png" width="2.5%" height="2.5%" /><label for="groupSelection" class="uppercase">Select existing group to edit:</label>
+      <select onchange="goTo()" id="urlList">
+      <option value="">--Select--</option>
+      {% for group in userGroups %}
+        <option value="?gid={{ group.key.id }}&n={{ nickname }}">{{ group.groupName|escape }}</option>
+      {% endfor %}
+      </select>
+      </form>
+    {% endif %}
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  {% ifnotequal thisGroup "" %}
+  {% comment %} Build in check to ensure that person is a member of the group he's about to edit {% endcomment %}
+    <form action="/updateGroupName" method="post" style="margin-bottom:20px;">
+      <table>
+      <tr>
+      <td class="uppercase">Edit Group Name:</td>
+      <input type="hidden" name="_gid" value="{{ thisGroup }}">
+      <td><input type="text" style="width:200" maxlength=200 name="newGroupName" value="{{ thisGroupData.groupName }}"></td><td><input type="submit" value="Update Group Name"></td>
+    </tr>
+    </table>
+  </form>
+  {% comment %} Build this in later
+    <form action="/updateGroupMembers" method="post" style="margin-bottom:20px;">
+      <table>
+      <tr>
+    <td class="uppercase">Add another member:</td>
+    </tr>
+    <tr><td class="uppercase">Friend (ex: john@gmail.com)</td><td class="uppercase">Nickname (ex: John)</td></tr>
+    <tr>
+    <td><input type="text" style="width:200" maxlength=200 name="" value=""></td>
+    <td><input type="text" style="width:200" maxlength=200 name="" value=""></td></tr>
+    <tr><td><input type="submit" value="Update Friends"></td>
+    </tr>
+      </table>
+    </form>
+  {% endcomment %}
+    
+  {% else %}
+  <h4><p class="content">Create a new group below blah:</p></h4>
+        <form action="/createGroup" method="post">
+          <div id = "theform"><table>
+          <tr><td class="uppercase">Group Name:</td><td><input type="text" value="{{ newGroupName }}" size=40 maxlength=200 name="newGroupName"></td></tr>
+          </table>
+          <table><tr><td class="uppercase">Friend (ex: john@gmail.com)</td><td class="uppercase">Nickname (ex: John)</td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail1 }}" size=40 maxlength=200 name="newFriendEmail1"></td><td><input type="text" value="{{ newFriendNickname1 }}" size=40 maxlength=200 name="newFriendNickname1"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail2 }}" size=40 maxlength=200 name="newFriendEmail2"></td><td><input type="text" value="{{ newFriendNickname2 }}" size=40 maxlength=200 name="newFriendNickname2"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail3 }}" size=40 maxlength=200 name="newFriendEmail3"></td><td><input type="text" value="{{ newFriendNickname3 }}" size=40 maxlength=200 name="newFriendNickname3"></td></tr>
+          </table></div>
+          <div id="hidden_friends"><table>
+          <tr><td><input type="text" value="{{ newFriendEmail4 }}" size=40 maxlength=200 name="newFriendEmail4"></td><td><input type="text" value="{{ newFriendNickname4 }}" size=40 maxlength=200 name="newFriendNickname4"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail5 }}" size=40 maxlength=200 name="newFriendEmail5"></td><td><input type="text" value="{{ newFriendNickname5 }}" size=40 maxlength=200 name="newFriendNickname5"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail6 }}" size=40 maxlength=200 name="newFriendEmail6"></td><td><input type="text" value="{{ newFriendNickname6 }}" size=40 maxlength=200 name="newFriendNickname6"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail7 }}" size=40 maxlength=200 name="newFriendEmail7"></td><td><input type="text" value="{{ newFriendNickname7 }}" size=40 maxlength=200 name="newFriendNickname7"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail8 }}" size=40 maxlength=200 name="newFriendEmail8"></td><td><input type="text" value="{{ newFriendNickname8 }}" size=40 maxlength=200 name="newFriendNickname8"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail9 }}" size=40 maxlength=200 name="newFriendEmail9"></td><td><input type="text" value="{{ newFriendNickname9 }}" size=40 maxlength=200 name="newFriendNickname9"></td></tr>
+          <tr><td><input type="text" value="{{ newFriendEmail10 }}" size=40 maxlength=200 name="newFriendEmail10"></td><td><input type="text" value="{{ newFriendNickname10 }}" size=40 maxlength=200 name="newFriendNickname10"></td></tr>
+          </table>
+          </div>
+          <a href="#" class="add_another">add more people...</a>
+          <table><tr><td class="uppercase"><input type="checkbox" name="sendEmailOrNot" value="Yes" disabled />   <font color="gray">Send Welcome Email to Invited Members [not implemented yet!]</font></td></tr></table>
+          <input type="hidden" name="_n" value="{{ nickname }}">
+          <div><input type="submit" value="Create Group"></p></div></div>
+        </form>
+        {% comment %}
+        <h4>Subject: Welcome to Gifty!</h4>
+        <p>Hi there! Your friend {{ nickname }} has invited you to join their Gifty group.</p>
+        <p>Gifty is a web application that lets you create & share lists of gifts with your friends and family.</p>
+        <p>Visit http://www.giftyapp.com to log in and check out the group that's been created for you. Thanks!</p>
+        <p>The Gifty Team</p>
+        {% endcomment %}
+  {% endifnotequal %}
+{% endblock %}
+

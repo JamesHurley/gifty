@@ -1,0 +1,134 @@
+/* CSS Document */
+
+body
+{
+background-color: #FFFFFF;
+font-family: Helvetica, sans-serif;
+margin:0px; 
+padding:0px;
+text-align:center;
+color: #80202F;
+}
+
+/*holds all contents of the page*/
+	#container
+	{
+	margin:0px auto;
+	padding:0;
+	width:763px;
+	height: auto;
+	}
+
+
+/*contains image of banner*/
+	#header
+	{
+	/*width:764px;
+	height: 85px;*/
+	width: 600px;
+	height: 150px;
+	color: #000000;
+	background: url(/images/gifty-header2.jpg);
+	margin: 0;
+	padding:0;
+	}
+
+
+
+/*main navigation - contains links to pages*/
+	#navigation
+	{
+	margin: 0;
+	padding: 0px 0 0 0;
+	width: 764px;
+	height: 25px;
+	background: #FFFFFF;
+	text-align: center;
+	}
+	
+	a#nav 
+	{
+	padding: 7px 10px 7px 38px;
+	margin: 0;
+	color: #80202F; 
+	text-decoration: none;
+	}
+	
+	a#nav:hover
+	{
+	color: #FFFFFF;
+	background-image: url(/images/tab.JPG);
+	}
+	
+
+	a#selected
+	{
+	padding: 7px 10px 7px 38px;
+	margin: 0;
+	color: #FFFFFF;
+	background-image: url(/images/tab.JPG);
+	text-decoration: none;
+	}
+	
+	a#selected:hover
+	{
+	color: #FFFFFF;
+	background-image: url/images/(tab.JPG);
+	}
+
+/*contains body paragraphs*/
+	#content
+	{
+	width:764px;
+	height: auto;
+	line-height: 150%;
+	//background-image: url(content.PNG);
+	border-left: 4px solid #80202F;
+	border-right: 4px solid #80202F;
+	border-bottom: 4px solid #80202F;
+	border-top: 4px solid #80202F;
+	margin: 0;
+	padding: 20px 0 0 0;
+	text-align: left;
+	}
+
+/*use this p tag for all content paragraphs. 
+adds space around the text (otherwise text is up against the wall)*/
+	p.content
+	{
+	margin: 0 20px 0 20px;
+	}
+	td.formcontent
+	{
+	margin: 0 20px 0 20px;
+	}
+	
+	#footer {
+		text-align: center;
+		clear:both;
+		font-size: 11px;
+	}
+	#theform {
+	margin: 0 20px 0 20px;
+	}
+	
+	.added {
+		font-size: 12px;
+		font-style: italic;
+	}
+	
+	.for {
+		font-size: 13px;
+		font-style: bold;
+	}
+	
+	.date {
+		font-size: 12px;
+		font-style: italic;
+	}
+	
+	.giftEdited {
+	    font-size: 14px;
+	    font-style: bold;
+	    color: #FF0033;
+	}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block aboveBar %}
+  <div class="content3">
+	<div id="group">
+	  <p id="groupManagement" class="uppercase"><img src= "/images/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/?n={{ nickname }}">Back to main page</a></p>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+    <b><p class="uppercase">Edit the gift:</p></b>
+        <form action="/editGift" method="post">
+          <table>
+          <tr><td class="uppercase">Description:</td><td><input type="text" value="{{ giftDescription }}" size=40 maxlength=200 name="newGiftDescription"></td></tr>
+          <tr><td class="uppercase">Link (optional):</td><td><input type="text" value="{{ giftLink }}" size=40 maxlength=200 name="newGiftLink"></td></tr>
+          <input type="hidden" name="_id" value="{{ giftId }}">
+          <input type="hidden" name="_gid" value="{{ thisGroup }}">
+          <input type="hidden" name="_n" value="{{ nickname }}">
+          <input type="hidden" name="editOrDelete" value="edit">
+          </table>
+          <input type="submit" value="Edit Gift"></p>
+        </form>
+
+  <p class="uppercase"><b>Or Delete it:</b></p>
+         <form action="/editGift" method="post">
+          <div id = "theform">
+          <input type="hidden" name="_id" value="{{ giftId }}">
+          <input type="hidden" name="_gid" value="{{ thisGroup }}">
+          <input type="hidden" name="_n" value="{{ nickname }}">
+          <input type="hidden" name="editOrDelete" value="delete">
+          <div><input type="submit" value="Delete Gift"></p></div></div>
+        </form>
+    </div>
+  </div>
+{% endblock %}

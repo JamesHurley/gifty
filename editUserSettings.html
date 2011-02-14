@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block aboveBar %}
+  <div class="content3">
+	<div id="group">
+	  <p id="groupManagement" class="uppercase"><img src= "/images/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/">Back to main page</a></p>
+	</div>
+{% endblock %}
+{% block content %}
+        <form action="/editUserSettings" method="post">
+          <table>
+          <tr><td class="uppercase">Update Your Username:</td><td><input type="text" value="{{ nickname }}" size=40 maxlength=200 name="newNickname"></td></tr>
+          </table>
+          <table>
+          <tr><td class="uppercase"><input type="checkbox" name="newEmailSettings" value="Yes" {{ checkedOrNot }} />   Receive daily automated email alerts when new gifts are added (sent at 10pm PDT)</td></tr>
+          </table>
+          <input type="hidden" name="_gid" value="{{ thisGroup }}">
+          <div><input type="submit" value="Update"></p></div>
+        </form>
+  <p><a href="javascript:void((function(){var%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('src','http://www.giftyapp.com/frame/bookmarklet.js');document.body.appendChild(e);document.close();})())">Bookmarklet</a></p>
+  </div>
+{% endblock %}

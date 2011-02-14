@@ -1,0 +1,359 @@
+body {
+  color: #333;
+  background: #162732;
+  margin: 0;
+  padding: 0;
+  font: 14px/20px Georgia;
+  }
+
+/* header */
+  
+.headwrap {
+  background: #fff;
+  border-bottom: 4px solid #162732;
+  }
+.header {
+  padding: 10px 0 70px 0;
+  margin: 0 auto;
+  width: 960px;
+  }
+.header img {
+  float: left;
+  display: inline;
+  }
+
+#login { 
+  font-size: 11px; 
+  float: right; 
+  position: relative;
+  bottom: -25px;
+  right: 20px;
+  text-transform:uppercase;
+  border: 0px;
+}
+
+#login img {
+  position: relative;
+  bottom: 8px;
+  border: 0px;
+}
+
+.uppercase {
+letter-spacing:1.5px;
+text-transform: uppercase;
+font-size: 12px;
+}
+
+.content1 {
+  clear: both;
+  position: relative;
+  width: 960px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 10px 0 0px;
+  //background: #fff;
+  background: url('/images/background1_gray_flipped.png');
+  //border-right: 2px solid white;
+  //border-left: 2px solid white;
+  border-bottom: 1px solid white;
+  list-style-type: none; 
+  }
+
+#leftcontent1 {
+  position: absolute;
+}
+
+.content2 {
+  position: relative;
+  width: 960px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 0px 0 0px;
+  //background: #fff;
+  //background: url('/images/background2_medgray.png');
+  background: url('/images/background1_gray.png');
+  //border-right: 2px solid white;
+  //border-left: 2px solid white;
+  border-top: 1px solid white;
+  }
+
+.content3 {
+  font-family: Georgia;
+  font-size: 16px;
+  //line-height: 130%;
+  margin:0px auto;
+  padding: 30px 30px;
+  width: 900px;
+  //height: 550px;
+  background-color: white;
+  overflow:auto;
+  }
+
+#slideshow {
+  list-style-type: none;
+}
+
+#slideshow li img {
+  border: 2px solid #162732;
+}
+
+#signin {
+  background: #fff;
+  position: absolute;
+  width: 200px;
+  left: 670px;
+  top: 107px;
+  font-weight: bold;
+  border: 2px solid #162732;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+#signin img {
+  border: 0px;
+}
+
+#video {
+  //float: right;
+  position: absolute;
+  left: 640px;
+  top: 40px;
+}
+
+#watchdemo {
+  position: absolute;
+  left: 700px;
+  color: #162732;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#toprightlinks {
+  border: 2px solid #162732;
+  background: #fff;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  position: absolute;
+  width: 240px;
+  left: 670px;
+  top: 12px;
+  font-size: 12px;
+}
+
+#bottomlefttext {
+  position: absolute;
+  left: 40px;
+  top: 15px;
+  //color: #000;
+  color: #162732;
+}
+
+#bottomlefttext ul {
+  position: absolute;
+  left: -20px;
+  font-size: 16px;
+}
+
+#bottomlefttext2 {
+  position: absolute;
+  width: 900px;
+  left: 40px;
+  top: 160px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #162732;
+}
+
+#bottomleftlist1 ul {
+  list-style-image: url("/images/gifty_bug_custom_50.png");
+  font-size: 16px;
+  position: absolute;
+  left: -12px;
+}
+
+#bottomleftlist2 ul {
+  list-style-image: url("/images/gifty_bug_custom_50.png");
+  font-size: 16px;
+  position: absolute;
+  left: 200px;
+}
+
+#bottomlefttext3 {
+  position: absolute;
+  width: 900px;
+  left: 40px;
+  top: 270px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #162732;
+}
+
+.footercontent {
+  clear: both;
+  height: 35px;
+  background-color: #fff;
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 5px;
+  border-top: solid 3px #162732;
+  text-align: center;
+  font-size: 12px;
+}
+
+//////////////////////////////////////////
+//Older css
+
+.uppercase {
+letter-spacing:1.5px;
+text-transform: uppercase;
+font-size: 12px;
+}
+
+
+/* Login Links */
+p#login { 
+padding: 0;
+margin: 5px 0 10px 0;
+font-size: 11px; 
+float: right; 
+text-transform:uppercase;
+}
+
+/* group */
+div#group {
+border-bottom: 1px dotted #227788;
+margin-bottom: 30px;
+height: 30px;
+}
+p#groupManagement { 
+float: right;
+}
+div#group p {
+margin:0 0 10px 0; 
+padding: 0;
+}
+div#group form {
+margin:0 0 10px 0; 
+padding: 0;
+}
+
+
+/* Left-Navigation */
+ul#navigation {
+clear: both;
+float: left; 
+width: 120px;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+ul#navigation li { margin-bottom: 5px; }
+ul#navigation li a {
+color: #000000;
+margin: 0;
+text-decoration: none;
+width: 100px;
+height: 15px;
+}
+ul#navigation li a.green, .green {color: #227788;}
+ul#navigation li a.linkgreen:hover {color: #227788;}
+
+ul#splash {
+list-style-image:url("/images/gifty_bug_presents.png");
+list-style:circle;
+}
+
+ul#slideshow2 li img{
+  border: 1px solid #ccc;
+  padding: 4px;
+}
+
+/* Main content area */
+#main {
+margin: 0 0 50px 0;
+float: right;
+width: 85%;
+background-color: white;
+}
+#main p { margin: 0 0 20px 0; padding: 0; }
+
+#signin2 {
+float: right;
+font-weight: bold;
+border: 1px solid #ccc;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 25px;
+padding-bottom: 25px;
+text-align: center;
+}
+
+.signinsmall {
+font-size: 12px;
+}
+
+/* Top bar */
+
+#top_splash_bar {
+  background: #455560;
+  color: #FFF;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  #padding: 10px 0;
+}
+
+#top_splash_bar span {
+  font-size: 16px;
+  float: right;
+  font-weight: bold;
+  padding-right: 20px;
+  #position: relative;
+}
+
+#top_splash_bar span .icon {
+  position: relative;
+  //padding-bottom: 20px;
+  float: bottom;
+  left: 900px;
+  top: 5px;
+  z-index: 10;
+}
+
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  #width: 940px;
+}
+
+.clearfix {
+  _display: block;
+  zoom: 1;
+}
+
+/* Hidden Friends */
+
+#hidden_friends {
+  display: none;
+}
+
+
+/* Footer */
+#container-footer {
+clear: both;
+font-size: 12px;
+text-align: center;
+}
+
+.date {
+font-size: 12px;
+font-style: italic;
+}
+
+
+

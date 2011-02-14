@@ -1,0 +1,23 @@
+application: giftyapp
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /images
+  static_dir: images
+
+- url: /frame
+  static_dir: frame
+
+- url: /lib
+  static_dir: lib
+
+- url: /.*
+  script: xmas2.py
+
+
+

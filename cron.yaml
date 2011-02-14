@@ -1,0 +1,5 @@
+cron:
+- description: daily new gift job
+  url: /tasks/cronj
+  schedule: every day 22:00
+  timezone: America/Los_Angeles

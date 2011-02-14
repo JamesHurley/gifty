@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Gifty</title>
+<meta name="description" content="Create gift lists and wishlists for sharing with friends and family. Perfect for Christmas, birthdays, and special events.">
+<link rel="stylesheet" type="text/css" href="stylesheets/style-new.css">
+<script type="text/javascript" src="/lib/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/jquery.innerfade.js"></script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $('#slideshow').innerfade({
+            speed: 'slow',
+            timeout: 4500,
+            type: 'sequence',
+            containerheight: '300px'
+          });
+        }
+      );
+    </script>
+<script type="text/javascript">
+  function goTo() {
+    url = document.getElementById('urlList').options[document.getElementById('urlList').selectedIndex].value
+    if(url != "")
+      location.href = url
+  }
+
+  $(document).ready(function(){
+    $('.add_another').click(function() {
+      $("#hidden_friends").show('fast');
+      $('.add_another').hide('slow');
+    });
+  });
+  
+</script>
+<meta name="google-site-verification" content="JtwqSw27b1AneEWmdyf8lHSVT6LicW0FD-u4LHpPuV4" />
+</head>
+
+<body>
+    <div class="headwrap">
+      <div class="header">
+        <a href="/"><img src="/images/gifty_logo_header.png" width="249" height="65" border="0" alt=""></a>
+          {% block topBar %}
+            {% if ldapName %}
+            <p id="login" class="uppercase">
+              <img src= "/images/gifty_bug_presents.png" width="31" height="28" />Logged in as: <font style="text-transform: uppercase;"> {{ nickname }}</font> | {{ login_link }} | <a href="/editUserSettings?n={{ nickname }}">User Settings</a>
+            </p>
+            {% else %}
+            <p id="login" class="uppercase">
+              <img src= "/images/gifty_bug_presents.png" width="31" height="28" /><font style="text-transform: uppercase;"> {{ login_link }} </font>
+            </p>
+            {% endif %}
+          {% endblock topBar %}
+      </div>
+    </div>
+{% block aboveBar %}
+{% comment %} This block is for anything that appears below the main logo but above the horizontal bar. {% endcomment %}
+{% endblock aboveBar %}
+{% block content %}
+    <div class="content1"> 
+      <div id="leftcontent1">
+        <ul id="slideshow">
+          <li><img src="images/slide1_new.jpg" /></li>
+          <li><img src="images/slide2_new.jpg" /></li>
+          <li><img src="images/slide3_new.jpg" /></li>
+        </ul>
+      </div>
+      <p id="toprightlinks">
+        <a href="/about">ABOUT</a> | <a href="/contact">CONTACT</a> | <a href="http://giftyblog.blogspot.com">BLOG</a>
+      </p>
+      <p id="signin">
+        Sign in to Gifty using your Google Account<br /><br />
+        <a href={{ url }}><img src="/images/sign_in_button.png" /></a><br /><br />
+        <span style="font-size: 14px"> Don't have a Google Account?<br />
+        <a href="http://www.google.com/accounts">Create one here</a></span>
+      </p>
+    </div>
+    
+    <div class="content2">
+      <div id="bottomlefttext">
+        <span style="font-size: 22px; font-weight: bold">Gifty lets you share gift lists with your family and friends</span>
+        <ul>
+          <li>Know who's purchased certain gifts, avoiding duplicate purchases</li>
+          <li>Add gifts to your list quickly via bookmarklet
+          <li>Receive email alerts when others update their lists</li>
+          <li>Simple and easy to use!</li>
+        </ul>
+      </div>
+      
+      <div id="bottomlefttext2">
+        Use Gifty For:
+        <div id="bottomleftlist1">
+          <ul>
+            <li>Christmas lists</li>
+            <li>Birthday lists</li>
+          </ul>
+        </div>
+        <div id="bottomleftlist2">
+          <ul>
+            <li>Weddings</li>
+            <li>Special Occasions</li>
+          </ul>
+        </div>
+      </div>
+      <div id="bottomlefttext3">
+        <a href="/about">Learn more...</a>
+      </div>
+    
+      <p id="watchdemo">
+        Video demo coming soon...
+      </p>   
+      
+    </div>
+{% endblock content %}
+
+  </div>
+    <div class="footercontent">
+      <a href="/about">ABOUT</a> | <a href="/contact">CONTACT</a> | <a href="http://giftyblog.blogspot.com">BLOG</a>
+    </div>
+  
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-199647-4");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+  <script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";  
+  feedback_widget_options.company = "gifty";
+  feedback_widget_options.placement = "left";
+  feedback_widget_options.color = "#222";
+  feedback_widget_options.style = "idea";
+  
+  
+  
+  
+  
+  
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+  </body>
+</html>
