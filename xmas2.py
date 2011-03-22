@@ -8,6 +8,8 @@
 This file controls all aspects of the Gifty model. It creates 3 entity groups
 in the datastore (Gift, GiftUser, and Group) and maps classes to different
 aspects of the site.
+
+Trying to remove index-old.
 """
 
 __author__ = "jhurley@gmail.com (James Hurley)"
