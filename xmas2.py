@@ -3,13 +3,12 @@
 #
 # Copyright 2011 James Hurley, Inc. All Rights Reserved
 
-"""The script that powers the Gifty app! Cleanup!
+"""The script that powers the Gifty app.
 
 This file controls all aspects of the Gifty model. It creates 3 entity groups
 in the datastore (Gift, GiftUser, and Group) and maps classes to different
 aspects of the site.
 
-Trying to remove index-old.
 """
 
 __author__ = "jhurley@gmail.com (James Hurley)"
@@ -590,52 +589,6 @@ class Index2(webapp.RequestHandler):
     path = os.path.join(os.path.dirname(__file__), 'index2.html')
     self.response.out.write(template.render(path, template_values))  
 
-class CreateGroup2(LoginCheck):
-  """This class controls the createGroup page."""
-  
-  def get(self):
-    
-    self.check_login()
-    
-    if users.get_current_user():
-      url = users.create_logout_url(self.request.uri)
-      userEmail = (users.get_current_user().email()).lower()
-    
-      nickname = self.request.get('n')
-      thisGroup = self.request.get('gid')
-      url = users.create_logout_url(self.request.uri)
-
-      # Duplicate code from above. Refactor later!
-      # Query the datastore for the groups that this user is in, and display them in the FE
-      userGroups = []    
-      currentUser = gModel.GiftUser.getCurrentUser()
-      
-      # Return a list of the Groups that the logged-in User belongs to.
-      userGroups = gModel.GiftUser.getUserGroups(currentUser)     
-      
-      if thisGroup:
-        thisGroupData = gModel.Group.get_by_id(long(thisGroup))
-      else:
-        thisGroupData = ""
-    
-      template_values = {
-        'email': userEmail,
-        'nickname': nickname,
-        'login_link': self.login_link,
-        'ldapName': self.ldapName,
-        'userGroups': userGroups,
-        'thisGroup': thisGroup,
-        'thisGroupData': thisGroupData,
-        }
-    
-      path = os.path.join(os.path.dirname(__file__), 'createGroup2.html')
-      self.response.out.write(template.render(path, template_values))
-    
-    else:
-      self.redirect('/')
-
-
-
 
 application = webapp.WSGIApplication(
                                      [('/', MainPage),
@@ -650,8 +603,7 @@ application = webapp.WSGIApplication(
                                       ('/contact', ContactPage),
                                       ('/tasks/cronj', CronSend),
                                       ('/bookmarklet', Bookmarklet),
-                                      ('/index2', Index2),
-                                      ('/createGroup2', CreateGroup2)],
+                                      ('/index2', Index2)],
                                       debug=True)
 
 def main():
