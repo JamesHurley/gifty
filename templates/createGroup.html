@@ -3,11 +3,11 @@
 {% block aboveBar %}
   <div class="content3">	
 	<div id="group">
-    <p id="groupManagement" class="uppercase"><img src= "/images/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/">Back to main page</a></p>
+    <p id="groupManagement" class="uppercase"><img src= "/static/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/">Back to main page</a></p>
 
     {% if userGroups %}
       <form id="groupForm">      
-      <img src= "/images/gifty_bug_bow-red.png" width="2.5%" height="2.5%" /><label for="groupSelection" class="uppercase">Select existing group to edit:</label>
+      <img src= "/static/gifty_bug_bow-red.png" width="2.5%" height="2.5%" /><label for="groupSelection" class="uppercase">Select existing group to edit:</label>
       <select onchange="goTo()" id="urlList">
       <option value="">--Select--</option>
       {% for group in userGroups %}

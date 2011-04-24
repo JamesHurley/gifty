@@ -4,9 +4,9 @@
     <div class="content3">
     {% if userGroups %}
       <div id="group">
-        <p id="groupManagement" class="uppercase"><img src= "/images/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/createGroup?n={{ nickname }}">Create / Edit Group</a></p>
+        <p id="groupManagement" class="uppercase"><img src= "/static/gifty_bug_bow-blue.png" width="43" height="20" /><a href="/createGroup?n={{ nickname }}">Create / Edit Group</a></p>
         <form id="groupForm">      
-          <img src= "/images/gifty_bug_bow-red.png" width="30" height="20" /><label for="groupSelection" class="uppercase">Select group:</label>
+          <img src= "/static/gifty_bug_bow-red.png" width="30" height="20" /><label for="groupSelection" class="uppercase">Select group:</label>
           <select onchange="goTo()" id="urlList">
           <option value="">--Select--</option>
           {% for group in userGroups %}

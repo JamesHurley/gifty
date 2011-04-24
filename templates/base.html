@@ -4,9 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Gifty</title>
 <meta name="description" content="Create gift lists and wishlists for sharing with friends and family. Perfect for Christmas, birthdays, and special events.">
-<link rel="stylesheet" type="text/css" href="stylesheets/style-new.css">
-<script type="text/javascript" src="/lib/jquery.min.js"></script>
-<script type="text/javascript" src="/lib/jquery.innerfade.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/style-new.css">
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.innerfade.js"></script>
     <script type="text/javascript">
       $(document).ready(
         function(){
@@ -40,15 +40,15 @@
 <body>
     <div class="headwrap">
       <div class="header">
-        <a href="/"><img src="/images/gifty_logo_header.png" width="249" height="65" border="0" alt=""></a>
+        <a href="/"><img src="/static/gifty_logo_header.png" width="249" height="65" border="0" alt=""></a>
           {% block topBar %}
             {% if ldapName %}
             <p id="login" class="uppercase">
-              <img src= "/images/gifty_bug_presents.png" width="31" height="28" />Logged in as: <font style="text-transform: uppercase;"> {{ nickname }}</font> | {{ login_link }} | <a href="/editUserSettings?n={{ nickname }}">User Settings</a>
+              <img src= "/static/gifty_bug_presents.png" width="31" height="28" />Logged in as: <font style="text-transform: uppercase;"> {{ nickname }}</font> | {{ login_link }} | <a href="/editUserSettings?n={{ nickname }}">User Settings</a>
             </p>
             {% else %}
             <p id="login" class="uppercase">
-              <img src= "/images/gifty_bug_presents.png" width="31" height="28" /><font style="text-transform: uppercase;"> {{ login_link }} </font>
+              <img src= "/static/gifty_bug_presents.png" width="31" height="28" /><font style="text-transform: uppercase;"> {{ login_link }} </font>
             </p>
             {% endif %}
           {% endblock topBar %}
@@ -61,9 +61,9 @@
     <div class="content1"> 
       <div id="leftcontent1">
         <ul id="slideshow">
-          <li><img src="images/slide1_new.jpg" /></li>
-          <li><img src="images/slide2_new.jpg" /></li>
-          <li><img src="images/slide3_new.jpg" /></li>
+          <li><img src="static/slide1_new.jpg" /></li>
+          <li><img src="static/slide2_new.jpg" /></li>
+          <li><img src="static/slide3_new.jpg" /></li>
         </ul>
       </div>
       <p id="toprightlinks">
@@ -71,7 +71,7 @@
       </p>
       <p id="signin">
         Sign in to Gifty using your Google Account<br /><br />
-        <a href={{ url }}><img src="/images/sign_in_button.png" /></a><br /><br />
+        <a href={{ url }}><img src="/static/sign_in_button.png" /></a><br /><br />
         <span style="font-size: 14px"> Don't have a Google Account?<br />
         <a href="http://www.google.com/accounts">Create one here</a></span>
       </p>

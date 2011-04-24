@@ -13,6 +13,7 @@ aspects of the site.
 
 __author__ = "jhurley@gmail.com (James Hurley)"
 
+import controllers.helper
 import cgi
 import datetime
 from google.appengine.api import users
@@ -24,8 +25,9 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.api import mail
 import os
 
+#import model.gModel
 from model import gModel
-from model import helper
+
 
 class LoginCheck(webapp.RequestHandler):
   """This is a superclass that checks if the user is logged-in."""
@@ -135,8 +137,10 @@ class MainPage(LoginCheck):
       'belongsInGroup': belongsInGroup,
       }
     
-    path = os.path.join(os.path.dirname(__file__), 'index.html')
-    
+    #path = os.path.join(os.path.dirname(__file__), 'index.html')
+    base_paths = os.path.split(os.path.dirname(__file__))
+    template_dir = os.path.join(base_paths[0], "templates")
+    path = os.path.join(template_dir, 'index.html')
     self.response.out.write(template.render(path, template_values))
     
 
@@ -205,7 +209,9 @@ class EditGift(LoginCheck):
       'ldapName': self.ldapName,
       }
 
-    path = os.path.join(os.path.dirname(__file__), 'editGift.html')
+    base_paths = os.path.split(os.path.dirname(__file__))
+    template_dir = os.path.join(base_paths[0], "templates")
+    path = os.path.join(template_dir, 'editGift.html')
     self.response.out.write(template.render(path, template_values))
     
   def post(self):
@@ -275,7 +281,9 @@ class EditUserSettings(LoginCheck):
         'checkedOrNot': checkedOrNot,
         }
      
-      path = os.path.join(os.path.dirname(__file__), 'editUserSettings.html')
+      base_paths = os.path.split(os.path.dirname(__file__))
+      template_dir = os.path.join(base_paths[0], "templates")
+      path = os.path.join(template_dir, 'editUserSettings.html')
       self.response.out.write(template.render(path, template_values))
 
     else:
@@ -332,7 +340,9 @@ class CreateGroup(LoginCheck):
         'thisGroupData': thisGroupData,
         }
     
-      path = os.path.join(os.path.dirname(__file__), 'createGroup.html')
+      base_paths = os.path.split(os.path.dirname(__file__))
+      template_dir = os.path.join(base_paths[0], "templates")
+      path = os.path.join(template_dir, 'createGroup.html')
       self.response.out.write(template.render(path, template_values))
     
     else:
@@ -452,7 +462,10 @@ class AboutPage(LoginCheck):
       'login_link': self.login_link,
       'ldapName': self.ldapName,
     }
-    path = os.path.join(os.path.dirname(__file__), 'about.html')
+    
+    base_paths = os.path.split(os.path.dirname(__file__))
+    template_dir = os.path.join(base_paths[0], "templates")
+    path = os.path.join(template_dir, 'about.html')
     self.response.out.write(template.render(path, template_values))
 
 
@@ -472,7 +485,10 @@ class ContactPage(LoginCheck):
       'login_link': self.login_link,
       'ldapName': self.ldapName,
     }
-    path = os.path.join(os.path.dirname(__file__), 'contact.html')
+    
+    base_paths = os.path.split(os.path.dirname(__file__))
+    template_dir = os.path.join(base_paths[0], "templates")
+    path = os.path.join(template_dir, 'contact.html')
     self.response.out.write(template.render(path, template_values))    
   
 
@@ -560,7 +576,9 @@ class Bookmarklet(webapp.RequestHandler):
       'loggedIn' : loggedIn,
       }
   
-    path = os.path.join(os.path.dirname(__file__), 'frame.html')
+    base_paths = os.path.split(os.path.dirname(__file__))
+    template_dir = os.path.join(base_paths[0], "templates")
+    path = os.path.join(template_dir, 'frame.html')
     self.response.out.write(template.render(path, template_values))  
   
   def post(self):
@@ -585,8 +603,10 @@ class Index2(webapp.RequestHandler):
 
     template_values = {
       }
-  
-    path = os.path.join(os.path.dirname(__file__), 'index2.html')
+    
+    base_paths = os.path.split(os.path.dirname(__file__))
+    template_dir = os.path.join(base_paths[0], "templates")
+    path = os.path.join(template_dir, 'index2.html')
     self.response.out.write(template.render(path, template_values))  
 
 

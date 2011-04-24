@@ -52,7 +52,7 @@ font-size: 12px;
   margin: 0 auto;
   padding: 10px 0 0px;
   //background: #fff;
-  background: url('/images/background1_gray_flipped.png');
+  background: url('background1_gray_flipped.png');
   //border-right: 2px solid white;
   //border-left: 2px solid white;
   border-bottom: 1px solid white;
@@ -70,8 +70,8 @@ font-size: 12px;
   margin: 0 auto;
   padding: 0px 0 0px;
   //background: #fff;
-  //background: url('/images/background2_medgray.png');
-  background: url('/images/background1_gray.png');
+  //background: url('background2_medgray.png');
+  background: url('background1_gray.png');
   //border-right: 2px solid white;
   //border-left: 2px solid white;
   border-top: 1px solid white;
@@ -169,14 +169,14 @@ font-size: 12px;
 }
 
 #bottomleftlist1 ul {
-  list-style-image: url("/images/gifty_bug_custom_50.png");
+  list-style-image: url("gifty_bug_custom_50.png");
   font-size: 16px;
   position: absolute;
   left: -12px;
 }
 
 #bottomleftlist2 ul {
-  list-style-image: url("/images/gifty_bug_custom_50.png");
+  list-style-image: url("gifty_bug_custom_50.png");
   font-size: 16px;
   position: absolute;
   left: 200px;
@@ -264,7 +264,7 @@ ul#navigation li a.green, .green {color: #227788;}
 ul#navigation li a.linkgreen:hover {color: #227788;}
 
 ul#splash {
-list-style-image:url("/images/gifty_bug_presents.png");
+list-style-image:url("gifty_bug_presents.png");
 list-style:circle;
 }
 
