@@ -6,4 +6,4 @@ This is the git repository for Gifty, an open-source side project of mine. All o
 
 If you have any questions about it, ping me!
 
-- James
+James

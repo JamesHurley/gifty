@@ -21,7 +21,7 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.api import mail
 import os
 
-from .model import gModel
+from model import gModel
 
 def getFormattedDate(gift):
   """Formats a gift's creation date into readable PDT time.

@@ -13,7 +13,6 @@ aspects of the site.
 
 __author__ = "jhurley@gmail.com (James Hurley)"
 
-import controllers.helper
 import cgi
 import datetime
 from google.appengine.api import users
@@ -25,7 +24,7 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.api import mail
 import os
 
-#import model.gModel
+from controllers import helper
 from model import gModel
 
 
