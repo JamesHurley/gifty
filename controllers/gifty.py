@@ -1,7 +1,7 @@
 #!/usr/bin/python2.4
 # -*- coding: UTF-8 -*-
 #
-# Copyright 2011 James Hurley
+# Copyright 2011 James Hurley, Inc. All Rights Reserved
 
 """The script that powers the Gifty app.
 
