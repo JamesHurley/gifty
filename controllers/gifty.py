@@ -1,7 +1,7 @@
 #!/usr/bin/python2.4
 # -*- coding: UTF-8 -*-
 #
-# Copyright 2011 James Hurley!
+# Copyright 2011 James Hurley
 
 """The script that powers the Gifty app.
 
@@ -27,7 +27,6 @@ import os
 from controllers import helper
 from model import gModel
 
-
 class LoginCheck(webapp.RequestHandler):
   """This is a superclass that checks if the user is logged-in."""
 
@@ -47,7 +46,8 @@ class LoginCheck(webapp.RequestHandler):
         giftuser = gModel.GiftUser()
         giftuser.giftUserName = (users.get_current_user().nickname()).lower()
         giftuser.giftUserEmail = (users.get_current_user().email()).lower()
-        giftuser.giftUserNickname = (users.get_current_user().nickname()).lower()
+        giftuser.giftUserNickname =
+          (users.get_current_user().nickname()).lower()
         giftuser.groups = []
         giftuser.put()
       currentUser = gModel.GiftUser.getCurrentUser()          
@@ -81,12 +81,14 @@ class MainPage(LoginCheck):
     else:
       thisGroupKey = 0
  
-    # Check the gid in the URL to verify that the logged-in user is a member of that group.
+    # Check the gid in the URL to verify that the logged-in user is a member of
+    # that group.
     for group in self.userGroups:
       if str(group.key().id()) == thisGroup:
         belongsInGroup = "yes"
  
-    # Populate list of all names in the current Group, given the Group's Key in the data store  
+    # Populate list of all names in the current Group, given the Group's Key in
+    # the data store  
     validNames = []
     validNamesList = gModel.Group.getMembers(thisGroupKey)
     for names in validNamesList:
@@ -99,7 +101,8 @@ class MainPage(LoginCheck):
       if nick == nameInURL:
         theName = uName
     
-    # Two queries; one for the gifts the User has chosen to purchase, and one for the gifts the User has requested
+    # Two queries; one for the gifts the User has chosen to purchase, and one
+    # for the gifts the User has requested
     myPurchasedGifts = gModel.Gift.gql("WHERE purchaser = :1 AND group = :2 ORDER BY date",
                                 theName, thisGroupKey)
     myGifts = gModel.Gift.gql("WHERE requester = :1 AND group = :2 ORDER BY date",
