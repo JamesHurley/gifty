@@ -1,5 +1,5 @@
-application: giftyapp
-version: 2
+application: giftyapp-hrd
+version: 4
 runtime: python
 api_version: 1
 

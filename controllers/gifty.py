@@ -46,8 +46,7 @@ class LoginCheck(webapp.RequestHandler):
         giftuser = gModel.GiftUser()
         giftuser.giftUserName = (users.get_current_user().nickname()).lower()
         giftuser.giftUserEmail = (users.get_current_user().email()).lower()
-        giftuser.giftUserNickname =
-          (users.get_current_user().nickname()).lower()
+        giftuser.giftUserNickname = (users.get_current_user().nickname()).lower()
         giftuser.groups = []
         giftuser.put()
       currentUser = gModel.GiftUser.getCurrentUser()          
